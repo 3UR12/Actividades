@@ -2,10 +2,10 @@ import java.util.regex.*;
 import java.util.concurrent.*;
 
 // Clase que implementa la validación de contraseñas
-class ValidadorContraseña implements Runnable {
+class ValidadorContraseñas implements Runnable {
     private String contraseña;
 
-    public ValidadorContraseña(String contraseña) {
+    public ValidadorContraseñas(String contraseña) {
         this.contraseña = contraseña;
     }
 
@@ -46,7 +46,7 @@ public class Actividad9 {
         ExecutorService executor = Executors.newFixedThreadPool(5);
 
         for (String contraseña : contraseñas) {
-            ValidadorContraseña validador = new ValidadorContraseña(contraseña);
+            ValidadorContraseñas validador = new ValidadorContraseñas(contraseña);
             executor.submit(validador);  // Enviar cada validación a un hilo del pool
         }
 
